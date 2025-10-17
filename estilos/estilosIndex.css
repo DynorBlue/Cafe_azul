@@ -1,14 +1,242 @@
-.navbar {
-  background: #4a2f1e;
+:root {
+  --coffee: #4a2f1e;
+  --coffee-dark: #3a2d28;
+  --wood: #5b3a29;
+  --cream: #f3eadf;
+  --cream-dark: #eadfce;
+  --text: #2a201c;
 }
-.fondo-cafe {
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+}
+
+.brand-serif {
+  font-family: "DM Serif Display", serif;
+  letter-spacing: 0.2px;
+}
+
+.bg-coffee {
+  background: var(--coffee) !important;
+}
+.bg-wood {
+  background: var(--wood);
+}
+.bg-cream {
+  background: var(--cream);
+}
+.bg-cream-dark {
+  background: var(--cream-dark);
+}
+
+.text-coffee {
+  color: var(--coffee) !important;
+}
+.text-coffee-dark {
+  color: var(--coffee-dark) !important;
+}
+.text-cream {
+  color: var(--cream) !important;
+}
+
+.btn-coffee {
+  background: var(--coffee);
+  color: #fff;
+}
+.btn-coffee:hover {
+  background: var(--coffee-dark);
+  color: #fff;
+}
+
+.btn-cream {
+  background: var(--cream);
+}
+.btn-cream:hover {
+  filter: brightness(0.95);
+}
+
+.navbar {
+  position: relative;
+  background: var(--coffee);
+}
+
+.nav-brand-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff !important;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .nav-left {
+    margin-right: 2.5rem;
+  }
+  .nav-right {
+    margin-left: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-left {
+    margin-right: 0.75rem;
+  }
+  .nav-right {
+    margin-left: 0.75rem;
+  }
+}
+
+.hero {
   background-image: url("../imagenes/jeremy-ricketts-6ZnhM-xBpos-unsplash.jpg");
-  height: 100vh;
   background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
 
-  background-attachment: fixed;
+.hero h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: 3.5rem;
+  color: #fff;
+}
 
-  background-position: center center;
+.hero p {
+  color: #f3eadf;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
 
-  background-repeat: no-repeat;
+.section {
+  position: relative;
+  overflow: hidden;
+}
+.section-angled-top::before {
+  content: "";
+  position: absolute;
+  inset: -40px 0 auto 0;
+  height: 80px;
+  background: var(--cream-dark);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}
+.section-angled-bottom::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -40px 0;
+  height: 80px;
+  background: var(--wood);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.card-soft {
+  border: 0;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+.card-soft .card-img-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.banner-soft img {
+  display: block;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.price {
+  color: var(--coffee-dark);
+}
+
+footer a:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 767.98px) {
+  .display-3 {
+    font-size: 2.25rem;
+  }
+  .hero-diagonal {
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+  }
+  .banner-soft {
+    display: none;
+  }
+}
+
+.modal-content {
+  border: 0;
+}
+.modal-header {
+  border-bottom: 0;
+}
+.toast {
+  border-radius: 0.75rem;
+}
+
+#inicio,
+#historia,
+#menu,
+#tienda,
+#carruselCafe,
+#recetas,
+#visitanos,
+#comunidad {
+  scroll-margin-top: 90px;
+}
+
+.nav-3col {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.25rem;
+  flex: 1 1 0;
+}
+.nav-left {
+  justify-content: flex-start;
+}
+.nav-right {
+  justify-content: flex-end;
+}
+
+.brand-center {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  padding: 0 0.5rem;
+}
+
+.navbar .nav-link {
+  font-family: "Poppins", sans-serif;
+  color: #f7efe6;
+  opacity: 0.95;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #fff;
+  opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+  .nav-3col {
+    display: block !important;
+  }
+  .nav-left,
+  .nav-right {
+    justify-content: flex-start;
+  }
 }
